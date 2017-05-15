@@ -1,0 +1,84 @@
+Lompat
+
+
+[Deskripsi]
+
+Terdapat sebuah digit string S berisi N karakter. Digit string adalah sebuah string yang mana seluruh karakternya adalah sebuah digit dalam basis 10.
+
+Pak Dengklek memiliki Q permainan. Pada setiap permainan, terdapat nilai L, R, dan K. Aturan dari permainan tersebut adalah sebagai berikut :
+
+- Pertama, Pak Dengklek akan meletakan sebuah robot katak di karakter ke-L dari string S.
+- Pak Dengklek dapat membuat robot katak ini melompat. Jika robot katak berada di karakter ke-i, maka robot katak dapat melompat ke karakter ke-j yang mana i < j ≤ i + K.
+- Pada akhir permainan, robot katak harus berada di karakter ke-R.
+- Nilai dari sebuah permainan adalah total dari angka yang terdapat pada karakter yang diinjak oleh robot katak, termasuk karakter ke-L dan karakter ke-R.
+
+Bantulah Pak Dengklek untuk menentukan nilai minimum yang mungkin dari setiap permainan.
+
+
+[Tugas]
+
+Anda harus mengimplementasi fungsi getMinimumPoints:
+
+- getMinimumPoints(N, Q, S, L, R, K) - Fungsi ini akan dipanggil grader hanya sekali.
+  - N : Banyaknya karakter pada digit string S.
+  - Q : Banyaknya permainan.
+  - S : Digit string yang akan digunakan untuk permainan.
+  - L : Sebuah vector berukuran Q. L[i] menyatakan nilai L pada permainan ke-(i + 1).
+  - R : Sebuah vector berukuran Q. R[i] menyatakan nilai R pada permainan ke-(i + 1).
+  - K : Sebuah vector berukuran Q. K[i] menyatakan nilai K pada permainan ke-(i + 1).
+  - Fungsi ini harus mengembalikan sebuah vector. Elemen ke-i dari vector ini menyatakan nilai minimum yang mungkin pada permainan ke-(i + 1).
+
+
+[Contoh]
+
+Jika diberikan N = 6, Q = 4, S = "199420", L = {2, 2, 2, 2}, R = {3, 3, 4, 4}, K = {1, 2, 1, 2}, maka fungsi getMinimumPoints(N, Q, S, L, R, K) harus mengembalikan {18, 18, 22, 13}.
+
+
+[Subsoal]
+
+Pada setiap subsoal berlaku
+
+- 1 ≤ N, Q ≤ 300.000
+- 1 ≤ L < R ≤ N pada setiap permainan
+- 1 ≤ K < N pada setiap permainan
+- Dijamin hanya terdapat maksimum 2.000 karakter yang bukan '0'.
+
+Subsoal 1
+
+- N ≤ 75
+
+Subsoal 2
+
+- N ≤ 200
+
+Subsoal 3
+
+- N ≤ 2.000
+
+Subsoal 4
+
+- Dijamin hanya terdapat maksimum 75 karakter yang bukan '0'
+
+Subsoal 5
+
+- Dijamin hanya terdapat maksimum 200 karakter yang bukan '0'
+
+Subsoal 6
+
+- Tidak ada batasan tambahan
+
+
+[Contoh Grader]
+
+Contoh grader yang diberikan akan membaca masukan dengan format sebagai berikut :
+- Baris pertama berisi dua buah bilangan bulat N dan Q dipisahkan oleh spasi.
+- Baris kedua berisi sebuah string S.
+- Q baris berikutnya berisi tiga buah bilangan bulat dipisahkan oleh spasi. Baris ke-i berisi L[i - 1], R[i - 1], dan K[i - 1] secara berurutan.
+
+Contoh grader yang diberikan akan mencetak keluaran dengan format sebagai berikut :
+- O baris, yang mana O adalah banyaknya bilangan yang dikembalikan oleh fungsi getMinimumPoints. Baris ke-i berisi bilangan ke-(i - 1) yang dikembalikan oleh getMinimumPoints.
+
+
+[Kerangka]
+
+Kerangka soal dapat Anda unduh di sini.

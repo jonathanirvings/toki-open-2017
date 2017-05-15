@@ -1,0 +1,107 @@
+Sulap
+
+
+[Deskripsi]
+
+Pak Dengklek kali ini akan memainkan trik sulap terbaru. Dalam trik sulap ini, asisten Pak Dengklek, yaitu Pak Ganesh menyiapkan N buah kartu yang dinomori dari 1 sampai N. Seorang penonton diundang ke panggung untuk memilih K buah kartu berbeda diantaranya. Pak Ganesh kemudian harus menambahkan satu kartu lagi yang tidak ada di kartu pilihan penonton. Kartu penonton dan kartu pilihan Pak Ganesh kemudian diacak di atas meja. Kemudian, melihat K + 1 kartu yang ada di meja dengan urutan yang sudah di acak, Pak Dengklek harus dapat menentukan K kartu pilihan penonton. 
+
+Tentu saja, Pak Ganesh dan Pak Dengklek tidak boleh berkomunikasi sesaat setelah trik dimulai, namun mereka dapat menentukan strategi terlebih dahulu sebelum trik dimulai. Kali ini, Anda bertugas sebagai konsultan sulap Pak Dengklek dan Pak Ganesh. Anda harus membantu mereka dengan merancang strategi tersebut. Pak Dengklek dan Pak Ganesh kali ini akan memainkan trik ini sebanyak Q kali dengan nilai N dan K yang sama. 
+
+
+[Tugas]
+
+Terdapat dua file yang harus Anda lengkapi. Dua file ini tidak boleh memiliki variabel global dengan nama yang sama. Dua file ini juga tidak boleh berkomunikasi dengan cara apapun (sebagai contoh, berbagi variabel yang sama) kecuali melalui grader.
+
+Pada file assistant.cpp, Anda harus membantu Pak Ganesh dengan mengimplementasi fungsi initAssistant dan giveClue:
+
+- initAssistant(N, K) - Fungsi ini akan dipanggil grader hanya sekali sebelum semua trik dimainkan.
+  - N : Banyaknya kartu yang terdapat pada trik.
+  - K : Banyaknya kartu yang dipilih oleh penonton.
+- giveClue(cards) - Fungsi ini akan dipanggil grader Q kali, satu kali untuk setiap trik.
+  - cards : Sebuah vector berukuran K. Vector ini berisi indeks dari kartu-kartu yang dipilih penonton secara menaik.
+  - Fungsi ini harus mengembalikan sebuah int yang menyatakan indeks kartu yang akan ditambahkan oleh Pak Ganesh. Jika indeks kartu yang dikembalikan tidak valid, maka Anda akan langsung mendapatkan Wrong Answer.
+
+Pada file magician.cpp, Anda harus membantu Pak Dengklek dengan mengimplementasi fungsi initMagician dan findOriginalCards:
+
+- initMagician(N, K) - Fungsi ini akan dipanggil grader hanya sekali sebelum semua trik dimainkan.
+  - N : Banyaknya kartu yang terdapat pada trik.
+  - K : Banyaknya kartu yang dipilih oleh penonton.
+- findOriginalCards(cards) - Fungsi ini akan dipanggil grader Q kali, satu kali untuk setiap trik.
+  - cards : Sebuah vector berukuran K + 1. Vector ini berisi indeks dari kartu-kartu yang dipilih penonton dan indeks dari kartu yang dikembalikan oleh fungsi giveClue secara menaik. 
+  - Fungsi ini harus mengembalikan sebuah vector. Vector ini berisi indeks dari kartu-kartu yang dipilih penonton secara menaik.
+
+
+[Contoh]
+
+Jika diberikan N = 5, K = 2, Q = 2, maka berikut adalah salah satu scenario yang mungkin
+
+1. Grader memanggil initMagician(5, 2) dan tidak mengembalikan apa-apa.
+2. Grader memanggil initAssistant(5, 2) dan tidak mengembalikan apa-apa.
+3. Grader memanggil giveClue({1, 2}) dan peserta mengembalikan 3.
+4. Grader memanggil findOriginalCards({1, 2, 3}) dan peserta mengembalikan {1, 2}.
+5. Grader memanggil giveClue({1, 3}) dan peserta mengembalikan 4.
+6. Grader memanggil findOriginalCards({1, 3, 4}) dan peserta mengembalikan {1, 3}.
+
+2 trik telah dilakukan dan seluruh tebakan benar. Peserta mendapatkan Accepted.
+
+
+[Contoh]
+
+Jika diberikan N = 5, K = 2, Q = 2, maka berikut adalah salah satu scenario yang mungkin
+
+1. Grader memanggil initMagician(5, 2) dan tidak mengembalikan apa-apa.
+2. Grader memanggil initAssistant(5, 2) dan tidak mengembalikan apa-apa.
+3. Grader memanggil giveClue({1, 2}) dan peserta mengembalikan 3.
+4. Grader memanggil findOriginalCards({1, 2, 3}) dan peserta mengembalikan {1, 2}.
+5. Grader memanggil giveClue({1, 3}) dan peserta mengembalikan 2.
+6. Grader memanggil findOriginalCards({1, 2, 3}) dan peserta mengembalikan {1, 2}.
+
+Karena trik terakhir ditebak dengan salah, peserta mendapatkan Wrong Answer.
+
+
+[Subsoal]
+
+Pada setiap subsoal berlaku
+
+- 1 ≤ K < N ≤ 12
+- 1 ≤ Q ≤ 500.000
+- 2 * K < N
+
+Subsoal 1
+
+- Dijamin kartu bernomor N tidak akan muncul pada seluruh Q trik
+
+Subsoal 2
+
+- K = 1
+
+Subsoal 3
+
+- N ≤ 6
+
+Subsoal 4
+
+- K ≤ 2
+
+Subsoal 5
+
+- Q ≤ 3
+
+Subsoal 6
+
+- Tidak ada batasan tambahan
+
+
+[Contoh Grader]
+
+Contoh grader yang diberikan akan membaca masukan dengan format sebagai berikut :
+- Baris pertama berisi tiga buah bilangan bulat N, K, dan Q dipisahkan oleh spasi.
+- Q baris berikutnya berisi K buah bilangan bulat yang dipisahkan oleh spasi. Baris ke-i menyatakan kartu-kartu pilihan penonton yang terurut menaik.
+
+Contoh grader yang diberikan akan mencetak keluaran dengan format sebagai berikut :
+- Q baris pertama berisi beberapa bilangan bulat dipisahkan oleh spasi. Baris ke-i berisi bilangan-bilangan bulat yang dikembalikan oleh fungsi findOriginalCards(cards) pada trik ke-i.
+
+
+[Kerangka]
+
+Kerangka soal dapat Anda unduh di sini.

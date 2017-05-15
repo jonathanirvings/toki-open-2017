@@ -1,0 +1,79 @@
+Radius
+
+
+[Deskripsi]
+
+Pak Dengklek adalah seorang presiden Indonesia. Di negara ini terdapat N kota yang dihubungkan oleh N - 1 jalan dua arah. Kota pusat diberi nomor 1, dan kota-kota lainnya diberi nomor dari 2 sampai N. Jalan-jalan diberi nomor dari 1 sampai N - 1. Jalan ke-i menghubungkan kota ke-U_i dan kota ke-V_i secara langsung. Setiap pasang kota terhubung oleh jalan baik langsung maupun tidak langsung.
+
+Setiap akhir tahunnya terdapat pesta tutup tahun di kota pusat. Sehingga, setiap orang dari seluruh kota berjalan menuju kota pusat. Jarak dari suatu kota menuju kota pusat adalah banyaknya jalan minimum yang harus dilalui dari kota tersebut menuju kota pusat. Radius dari negara ini didefinisikan sebagai jarak dari suatu kota menuju kota pusat yang maksimum.
+
+Pak Dengklek merasa radius negara ini cukup tinggi, dan hal ini tidaklah baik karena beberapa orang dari satu atau lebih kota harus berjalan jauh untuk menuju kota pusat. Karenanya, Pak Dengklek ingin membangun sebuah jalan tambahan yang menghubungkan kota pusat dan suatu kota lainnya secara langsung. Sekarang, Pak Dengklek ingin mengetahui berapa radius negara ini setelah terdapat tambahan jalan yang dibangun.
+
+Terdapat Q rencana pembangunan jalan oleh Pak Dengklek. Pada rencana pembangunan ke-i akan dibangun jalan tambahan yang menghubungkan kota ke-1 dan kota ke-A_i secara langsung. Untuk setiap rencana, bantulah Pak Dengklek untuk mengetahui radius negara ini jika rencana pembangunan jalan ini terpenuhi. Perhatikan bahwa rencana-rencana ini tidak terkait satu sama lain. Sebagai contoh, jawaban pada rencana kedua tidak tergantung pada rencana pertama.
+
+
+[Tugas]
+
+Anda harus mengimplementasi fungsi getRadius:
+
+- getRadius(N, Q, U, V, A) - Fungsi ini akan dipanggil grader hanya sekali.
+  - N : Banyaknya kota di negara ini.
+  - Q : Banyaknya rencana pembangunan jalan oleh Pak Dengklek.
+  - U : Sebuah vector berukuran N - 1. U[i] menyatakan nilai dari U_{i + 1}.
+  - V : Sebuah vector berukuran N - 1. V[i] menyatakan nilai dari V_{i + 1}.
+  - A : Sebuah vector berukuran Q. A[i] menyatakan nilai dari A_{i + 1}.
+  - Fungsi ini harus mengembalikan sebuah vector. Elemen ke-i dari vector ini menyatakan radius negara ini jika rencana pembangunan jalan ke-(i + 1) terpenuhi.
+
+
+[Contoh]
+
+Jika diberikan N = 11, Q = 2, U = {1, 3, 1, 10, 5, 4, 7, 6, 8, 3}, V = {2, 9, 10, 9, 2, 2, 6, 3, 6, 11}, A = {6, 2}, maka fungsi getRadius(N, Q, U, V, A) harus mengembalikan {3, 5}.
+
+
+[Subsoal]
+
+Pada setiap subsoal berlaku
+
+- 2 ≤ N ≤ 100.000
+- 1 ≤ Q ≤ 100.000
+- 1 ≤ U_i, V_i ≤ N untuk setiap 1 ≤ i ≤ N - 1
+- U_i ≠ V_i untuk setiap 1 ≤ i ≤ N - 1
+- Dijamin seluruh pasang kota terhubung secara langsung ataupun tidak langsung oleh jalan.
+- 2 ≤ A_i ≤ N untuk setiap 1 ≤ i ≤ Q
+
+Subsoal 1
+
+- N, Q ≤ 2.000
+
+Subsoal 2
+
+- U_i = i untuk setiap 1 ≤ i ≤ N - 1
+- V_i = i + 1 untuk setiap 1 ≤ i ≤ N - 1
+
+Subsoal 3
+
+- U_i = floor((i + 1) / 2) untuk setiap 1 ≤ i ≤ N - 1
+- V_i = i + 1 untuk setiap 1 ≤ i ≤ N - 1
+
+Subsoal 4
+
+- Radius awal negara sebelum penambahan jalan tidak lebih dari 50.
+
+Subsoal 5
+
+- Tidak ada batasan tambahan
+
+[Contoh Grader]
+
+Contoh grader yang diberikan akan membaca masukan dengan format sebagai berikut :
+- Baris pertama berisi dua buah bilangan bulat N dan Q dipisahkan oleh spasi.
+- N - 1 baris berikutnya berisi dua buah bilangan bulat dipisahkan oleh spasi. Baris ke-i berisi U[i - 1] dan V[i - 1] secara berurutan.
+- Q baris berikutnya berisi sebuah bilangan bulat. Baris ke-i berisi A[i - 1].
+
+Contoh grader yang diberikan akan mencetak keluaran dengan format sebagai berikut :
+- O baris, yang mana O adalah banyaknya bilangan yang dikembalikan oleh fungsi getRadius. Baris ke-i berisi bilangan ke-(i - 1) yang dikembalikan oleh getRadius.
+
+
+[Kerangka]
+
+Kerangka soal dapat Anda unduh di sini.

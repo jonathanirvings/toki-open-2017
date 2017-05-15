@@ -1,0 +1,84 @@
+Jump
+
+
+[Description]
+
+There is a digit string S consisting of N characters. Digit string is a string where all of its characters are a digit in base 10.
+
+Mr. Dengklek has Q games. Each game will be described by three integers L, R, and K. The rules of the game are :
+
+- First, Mr. Dengklek will put a robotic frog at the L-th character of S.
+- Mr. Dengklek can command this robotic frog to jump. If the robotic frog is at the i-th character, then the robotic frog can jump to the j-th character where i < j ≤ i + K.
+- At the end of the game, the robotic frog must be at the R-th character.
+- The score of a game is the sum of the numbers located at the characters stepped by the robotic frog, including the L-th character and the R-th character.
+
+Help Mr. Dengklek to find the minimum possible score for each game.
+
+
+[Task]
+
+You have to implement getMinimumPoints function:
+
+- getMinimumPoints(N, Q, S, L, R, K) - This function will be called once by the grader.
+  - N : The number of characters in S.
+  - Q : The number of games.
+  - S : Digit string used in the game.
+  - L : A vector with size Q. L[i] indicates the value of L for the (i + 1)-th game.
+  - R : A vector with size Q. R[i] indicates the value of R for the (i + 1)-th game.
+  - K : A vector with size Q. K[i] indicates the value of K for the (i + 1)-th game.
+  - This function must return a vector. The i-th element of this vector indicates the minimum possible score for the (i + 1)-th game.
+
+
+[Example]
+
+If given N = 6, Q = 4, S = "199420", L = {2, 2, 2, 2}, R = {3, 3, 4, 4}, K = {1, 2, 1, 2}, then getMinimumPoints(N, Q, S, L, R, K) must return {18, 18, 22, 13}.
+
+
+[Subtasks]
+
+For every subtask
+
+- 1 ≤ N, Q ≤ 300.000
+- 1 ≤ L < R ≤ N for each game
+- 1 ≤ K < N for each game
+- There are at most 2.000 nonzero characters.
+
+Subtask 1
+
+- N ≤ 75
+
+Subtask 2
+
+- N ≤ 200
+
+Subtask 3
+
+- N ≤ 2.000
+
+Subtask 4
+
+- There are at most 75 nonzero characters
+
+Subtask 5
+
+- There are at most 200 nonzero characters
+
+Subtask 6
+
+- No additional constraint
+
+
+[Sample Grader]
+
+The provided sample grader will read the input with the following format :
+- The first row consists of two integers N and Q separated by space.
+- The second line consists of a string S.
+- The next Q lines consist of three integers separated by space. The i-th line consists of L[i - 1], R[i - 1], K[i - 1] respectively.
+
+The provided sample grader will print the output with the following format :
+- O lines, where O is the number of integers returned by getMinimumPoints function. The i-th line consists of the (i - 1)-th integer returned by getMinimumPoints.
+
+
+[Skeleton]
+
+You can download the skeleton for this problem here.

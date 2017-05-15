@@ -1,0 +1,80 @@
+Radius
+
+
+[Description]
+
+Mr. Dengklek is the president of Indonesia. In this country there are N cities connected by N - 1 bidirectional road. The central city is numbered 1, and the rest of the cities are numbered from 2 to N. The roads are numbered from 1 to N - 1. The i-th road connects the U_i-th city and the V_i-th city directly. Every pair of cities are connected by road directly or indirectly.
+
+At the end of every year, there is a new year party in the central city. Hence, every person from all cities has to walk to the central city. The distance from a city to the central city is the number of roads which must be traversed from that city to the central city. The radius of this country is defined by the maximum distance from a city to the central city.
+
+Mr. Dengklek feels that the radius of this country is too high, and this is not a good thing since several people from one or more cities have to walk farther to the central city. Hence, Mr. Dengklek wants to construct an additional road directly connecting the central city and another city. Now, Mr. Dengklek wants to find the radius of this country after the additional road is constructed.
+
+There are Q road construction plans by Mr. Dengklek. An additional road directly connecting the 1-st city and the A_i-th city will be built at the i-th plan. For every plan, help Mr. Dengklek to find the radius of this country if the plan is fulfilled. Note that these plans are independent among one another. For example, the answer for the second plan is independent from the first plan.
+
+
+[Task]
+
+You have to implement getRadius function:
+
+- getRadius(N, Q, U, V, A) - This function will be called once by the grader.
+  - N : The number of cities in this country.
+  - Q : The number of road construction plans by Mr. Dengklek.
+  - U : A vector with size N - 1. U[i] indicates the value of U_{i + 1}.
+  - V : A vector with size N - 1. V[i] indicates the value of V_{i + 1}.
+  - A : A vector with size Q. A[i] indicates the value of A_{i + 1}.
+  - This function must return a vector. The i-th element of this vector indicates the radius of this country if the (i + 1)-th road construction plan is fulfilled.
+
+
+[Example]
+
+If given N = 11, Q = 2, U = {1, 3, 1, 10, 5, 4, 7, 6, 8, 3}, V = {2, 9, 10, 9, 2, 2, 6, 3, 6, 11}, A = {6, 2}, then getRadius(N, Q, U, V, A) must return {3, 5}.
+
+
+[Subtasks]
+
+For every subtask
+
+- 2 ≤ N ≤ 100.000
+- 1 ≤ Q ≤ 100.000
+- 1 ≤ U_i, V_i ≤ N for every 1 ≤ i ≤ N - 1
+- U_i ≠ V_i for every 1 ≤ i ≤ N - 1
+- Every pair of cities is connected by road directly or indirectly.
+- 2 ≤ A_i ≤ N for every 1 ≤ i ≤ Q
+
+Subtask 1
+
+- N, Q ≤ 2.000
+
+Subtask 2
+
+- U_i = i for every 1 ≤ i ≤ N - 1
+- V_i = i + 1 for every 1 ≤ i ≤ N - 1
+
+Subtask 3
+
+- U_i = floor((i + 1) / 2) for every 1 ≤ i ≤ N - 1
+- V_i = i + 1 for every 1 ≤ i ≤ N - 1
+
+Subtask 4
+
+- The radius of this country before any additional road is not more than 50.
+
+Subtask 5
+
+- No additional constraint
+
+
+[Sample Grader]
+
+The provided sample grader will read the input with the following format :
+- The first row consists of two integers N and Q separated by space.
+- The next N - 1 lines consist of two integers separated by space. The i-th line consists of U[i - 1] and V[i - 1] consecutively.
+- The next Q lines consist of an integer. The i-th line consists of A[i - 1].
+
+The provided sample grader will print the output with the following format :
+- O lines, where O is the number of integers returned by getRadius function. The i-th line consists of the (i - 1)-th integer returned by getRadius.
+
+
+[Skeleton]
+
+You can download the skeleton for this problem here.

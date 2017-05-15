@@ -1,0 +1,93 @@
+Beauty
+
+
+[Description]
+
+In the country where Mr. Dengklek lives, there are N cities connected by M bidirectional roads. The cities are numbered from 1 to N. The i-th city has a beauty score T_i. The roads are numbered from 1 to M. The i-th road connects the U_i-th city and the V_i-th city directly.
+
+Mr Dengklek will plan Q trip routes. The i-th trip is a trip which :
+- Passes several cities with the A_i-th city as the first city and the B_i-th city as the last city.
+- There exists a road directly connecting two consecutive passed cities.
+- No city is visited more than once.
+
+The beauty score of a trip route is the maximum beauty score of all visited cities (including the A_i-th city and the B_i-th city). Mr. Dengklek wants to find a trip route with the maximum beauty score. Help Mr. Dengklek.
+
+
+[Task]
+
+You have to implement getMaximumBeauty function:
+
+- getMaximumBeauty(N, M, Q, T, U, V, A, B) - This function will be called once by the grader.
+  - N : The number of cities in the country where Mr. Dengklek lives.
+  - M : The number of bidirectional roads connecting the cities.
+  - Q : The number of trip routes planned by Mr. Dengklek.
+  - T : A vector with size N. T[i] indicates the value of T_{i + 1}.
+  - U : A vector with size M. U[i] indicates the value of U_{i + 1}.
+  - V : A vector with size M. V[i] indicates the value of V_{i + 1}.
+  - A : A vector with size Q. A[i] indicates the value of A_{i + 1}.
+  - B : A vector with size Q. B[i] indicates the value of B_{i + 1}.
+  - This function must return a vector. The i-th element of this vector indicates the maximum beauty score of the (i + 1)-th trip route.
+
+
+[Example]
+
+If given N = 5, M = 5, Q = 3, T = {9, 7, 10, 5, 4}, U = {2, 4, 5, 1, 5}, V = {1, 3, 4, 5, 2}, A = {3, 2, 4}, B = {1, 5, 5}, then getMaximumBeauty(N, M, Q, T, U, V, A, B) must return {10, 9, 5}.
+
+If given N = 7, M = 8, Q = 5, T = {100, 80, 70, 1, 2, 200, 300}, U = {1, 1, 2, 1, 1, 6, 2, 3}, V = {2, 3, 3, 7, 6, 7, 4, 5}, A = {1, 2, 3, 6, 6}, B = {4, 3, 5, 1, 3}, then getMaximumBeauty(N, M, Q, T, U, V, A, B) must return {100, 100, 70, 300, 300}.
+
+
+[Subtasks]
+
+For every subtask
+
+- 2 ≤ N ≤ 100.000
+- 1 ≤ M ≤ 200.000
+- 1 ≤ Q ≤ 100.000
+- 1 ≤ T_i ≤ 10^9 for every 1 ≤ i ≤ N
+- 1 ≤ A_i, B_i ≤ N for every 1 ≤ i ≤ Q
+- A_i ≠ B_i for every 1 ≤ i ≤ Q
+- 1 ≤ U_i, V_i ≤ N for every 1 ≤ i ≤ M
+- U_i ≠ V_i for every 1 ≤ i ≤ M
+- Every pair of cities is connected directly by at most one road.
+- Every pair of cities is connected directly or indirectly.
+
+Subtask 1
+
+- N, Q ≤ 15
+- M ≤ 30
+
+Subtask 2
+
+- N ≤ 100
+- M ≤ 200
+- Q ≤ 15
+
+Subtask 3
+
+- Q ≤ 15
+
+Subtask 4
+
+- N ≤ 1.500
+- M ≤ 3.000
+
+Subtask 5
+
+- No additional constraint
+
+
+[Sample Grader]
+
+The provided sample grader will read the input with the following format :
+- The first row consists of three integers N, M, and Q separated by space.
+- The second row consists of N integers separated by space. The i-th integer indicates the value of T[i - 1].
+- The next M lines consist of two integers separated by space. The i-th line consists of U[i - 1] and V[i - 1] consecutively.
+- The next Q lines consist of two integers separated by space. The i-th line consists of A[i - 1] and B[i - 1] consecutively.
+
+The provided sample grader will print the output with the following format :
+- O lines, where O is the number of integers returned by getMaximumBeauty function. The i-th line consists of the (i - 1)-th integer returned by getMaximumBeauty.
+
+
+[Skeleton]
+
+You can download the skeleton for this problem here.

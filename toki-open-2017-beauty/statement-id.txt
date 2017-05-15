@@ -1,0 +1,92 @@
+Keindahan
+
+
+[Deskripsi]
+
+Di negara tempat Pak Dengklek tinggal terdapat N kota yang dihubungkan oleh M jalan dua arah. Kota-kota ini diberi nomor dari 1 sampai N. Kota ke-i memiliki nilai keindahan T_i. Jalan-jalan diberi nomor dari 1 sampai M. Jalan ke-i menghubungkan kota ke-U_i dan kota ke-V_i secara langsung.
+
+Terdapat Q rute perjalanan yang akan dilakukan Pak Dengklek. Perjalanan ke-i adalah sebuah perjalanan yang :
+- Melewati beberapa kota dengan diawali dari kota ke-A_i dan diakhiri di kota ke-B_i.
+- Untuk setiap dua kota berurutan yang dilewati terdapat jalan yang menghubungkan secara langsung kedua kota tersebut.
+- Tidak ada sebuah kota yang dikunjungi lebih dari sekali.
+
+Nilai keindahan dari sebuah rute perjalanan adalah nilai keindahan maksimum dari seluruh kota yang dilewati (termasuk kota ke-A_i dan kota ke-B_i). Pak Dengklek ingin mencari rute perjalanan yang memiliki nilai keindahan maksimum. Bantulah Pak Dengklek.
+
+
+[Tugas]
+
+Anda harus mengimplementasi fungsi getMaximumBeauty:
+
+- getMaximumBeauty(N, M, Q, T, U, V, A, B) - Fungsi ini akan dipanggil grader hanya sekali.
+  - N : Banyaknya kota di negara tempat Pak Dengklek tinggal.
+  - M : Banyaknya jalan dua arah yang menghubungkan kota-kota.
+  - Q : Banyaknya rute perjalanan yang akan dilakukan Pak Dengklek.
+  - T : Sebuah vector berukuran N. T[i] menyatakan nilai dari T_{i + 1}.
+  - U : Sebuah vector berukuran M. U[i] menyatakan nilai dari U_{i + 1}.
+  - V : Sebuah vector berukuran M. V[i] menyatakan nilai dari V_{i + 1}.
+  - A : Sebuah vector berukuran Q. A[i] menyatakan nilai dari A_{i + 1}.
+  - B : Sebuah vector berukuran Q. B[i] menyatakan nilai dari B_{i + 1}.
+  - Fungsi ini harus mengembalikan sebuah vector. Elemen ke-i dari vector ini menyatakan nilai keindahan dari rute perjalanan ke-(i + 1) yang maksimum.
+
+
+[Contoh]
+
+Jika diberikan N = 5, M = 5, Q = 3, T = {9, 7, 10, 5, 4}, U = {2, 4, 5, 1, 5}, V = {1, 3, 4, 5, 2}, A = {3, 2, 4}, B = {1, 5, 5}, maka fungsi getMaximumBeauty(N, M, Q, T, U, V, A, B) harus mengembalikan {10, 9, 5}.
+
+Jika diberikan N = 7, M = 8, Q = 5, T = {100, 80, 70, 1, 2, 200, 300}, U = {1, 1, 2, 1, 1, 6, 2, 3}, V = {2, 3, 3, 7, 6, 7, 4, 5}, A = {1, 2, 3, 6, 6}, B = {4, 3, 5, 1, 3}, maka fungsi getMaximumBeauty(N, M, Q, T, U, V, A, B) harus mengembalikan {100, 100, 70, 300, 300}.
+
+
+[Subsoal]
+
+Pada setiap subsoal berlaku
+
+- 2 ≤ N ≤ 100.000
+- 1 ≤ M ≤ 200.000
+- 1 ≤ Q ≤ 100.000
+- 1 ≤ T_i ≤ 10^9 untuk setiap 1 ≤ i ≤ N
+- 1 ≤ A_i, B_i ≤ N untuk setiap 1 ≤ i ≤ Q
+- A_i ≠ B_i untuk setiap 1 ≤ i ≤ Q
+- 1 ≤ U_i, V_i ≤ N untuk setiap 1 ≤ i ≤ M
+- U_i ≠ V_i untuk setiap 1 ≤ i ≤ M
+- Dijamin seluruh pasang kota dihubungkan secara langsung oleh paling banyak satu jalan.
+- Dijamin seluruh pasang kota terhubung secara langsung ataupun tidak langsung oleh jalan.
+
+Subsoal 1
+
+- N, Q ≤ 15
+- M ≤ 30
+
+Subsoal 2
+
+- N ≤ 100
+- M ≤ 200
+- Q ≤ 15
+
+Subsoal 3
+
+- Q ≤ 15
+
+Subsoal 4
+
+- N ≤ 1.500
+- M ≤ 3.000
+
+Subsoal 5
+
+- Tidak ada batasan tambahan
+
+[Contoh Grader]
+
+Contoh grader yang diberikan akan membaca masukan dengan format sebagai berikut :
+- Baris pertama berisi tiga buah bilangan bulat N, M dan Q dipisahkan oleh spasi.
+- Baris kedua berisi N bilangan bulat dipisahkan oleh spasi. Bilangan ke-i menyatakan nilai dari T[i - 1].
+- M baris berikutnya berisi dua buah bilangan bulat dipisahkan oleh spasi. Baris ke-i berisi U[i - 1] dan V[i - 1] secara berurutan.
+- Q baris berikutnya berisi dua buah bilangan bulat dipisahkan oleh spasi. Baris ke-i berisi A[i - 1] dan B[i - 1] secara berurutan.
+
+Contoh grader yang diberikan akan mencetak keluaran dengan format sebagai berikut :
+- O baris, yang mana O adalah banyaknya bilangan yang dikembalikan oleh fungsi getMaximumBeauty. Baris ke-i berisi bilangan ke-(i - 1) yang dikembalikan oleh getMaximumBeauty.
+
+
+[Kerangka]
+
+Kerangka soal dapat Anda unduh di sini.

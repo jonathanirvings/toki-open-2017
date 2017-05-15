@@ -1,0 +1,71 @@
+Memperluas Persegi
+
+
+[Deskripsi]
+
+Terdapat N titik pada sebuah bidang kartesian. Titik ke-i berada pada posisi (X_i, Y_i). Tidak ada dua titik yang berada pada koordinat yang sama. Semua titik ini sebenarnya adalah sebuah persegi yang panjang sisinya dapat diabaikan. Pada awalnya, Anda dapat berasumsi bahwa panjang sisi dari setiap persegi adalah nol.
+
+Panjang sisi dari tiap persegi meningkat dengan laju yang konstan. Laju dari peningkatan ini sama untuk seluruh persegi. Untuk setiap persegi, panjang sisinya akan meningkat dengan cara menggerakan titik-titik sudutnya, namun titik tengahnya tidak bergerak. Lebih jelasnya, asumsikan terdapat sebuah persegi yang mana ujung kiri bawahnya adalah (x - S, y - S) dan ujung kanan atasnya adalah (x + S, y + S). Persegi ini memiliki titik tengah (x, y). Jika panjang sisinya meningkat sebanyak D, ujung kiri bawahnya akan menjadi (x - (S + D/2), y - (S + D/2)) dan ujung kanan atasnya akan menjadi (x + (S + D/2), y + (S + D/2)).
+
+Ketika sebuah persegi menyentuh persegi lain, panjang sisinya akan berhenti meningkat. Tentu saja, akan ada suatu waktu yang mana seluruh persegi berhenti berkembang. Tugas Anda adalah menghitung jumlah luas yang dicakup oleh persegi-persegi ini pada waktu tersebut. Jumlah luas ini dijamin sebuah bilangan bulat.
+
+
+[Tugas]
+
+Anda harus mengimplementasi fungsi getTotalArea:
+
+- getTotalArea(N, X, Y) - Fungsi ini akan dipanggil grader hanya sekali.
+  - N : Banyaknya titik pada bidang.
+  - X : Sebuah vector berukuran N. X[i] menyatakan nilai X_{i + 1}.
+  - Y : Sebuah vector berukuran N. Y[i] menyatakan nilai Y_{i + 1}.
+  - Fungsi ini harus mengembalikan sebuah long long yang menyatakan jumlah luas yang dicakup oleh persegi-persegi ini pada akhir perkembangan.
+
+
+[Contoh]
+
+Jika diberikan N = 3, X = {0, 0, 2}, Y = {0, 2, 0}, maka getTotalArea(N, X, Y) harus mengembalikan 12.
+
+
+[Subsoal]
+
+Pada setiap subsoal berlaku
+
+- 2 ≤ N ≤ 20.000
+- 0 ≤ X_i, Y_i ≤ 100.000 untuk setiap 1 ≤ i ≤ N
+- X_i ≠ X_j atau Y_i ≠ Y_j untuk setiap 1 ≤ i < j ≤ N
+
+Subsoal 1
+
+- N ≤ 100
+- X_i, Y_i ≤ 100 untuk setiap 1 ≤ i ≤ N
+
+Subsoal 2
+
+- N ≤ 100
+
+Subsoal 3
+
+- N ≤ 4.000
+
+Subsoal 4
+
+- N ≤ 10.000
+
+Subsoal 5
+
+- Tidak ada batasan tambahan
+
+
+[Contoh Grader]
+
+Contoh grader yang diberikan akan membaca masukan dengan format sebagai berikut :
+- Baris pertama berisi sebuah bilangan bulat N.
+- N baris berikutnya berisi dua buah bilangan bulat dipisahkan oleh spasi. Baris ke-i berisi X[i - 1] dan Y[i - 1] secara berurutan.
+
+Contoh grader yang diberikan akan mencetak keluaran dengan format sebagai berikut :
+- Baris pertama berisi sebuah bilangan bulat yang dikembalikan oleh fungsi getTotalArea.
+
+
+[Kerangka]
+
+Kerangka soal dapat Anda unduh di sini.

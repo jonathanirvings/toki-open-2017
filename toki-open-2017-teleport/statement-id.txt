@@ -1,0 +1,90 @@
+Teleport
+
+
+[Deskripsi]
+
+Pak Dengklek kali ini berada pada sebuah labirin yang memiliki R baris dan C kolom. Baris-baris ini diberi nomor dari 1 (baris paling atas) sampai R (baris paling bawah), dan kolom-kolom ini diberi nomor dari 1 (kolom paling kiri) sampai C (kolom paling kanan). Di setiap perpotongan baris dan kolom terdapat sebuah ruangan. Ruangan yang merupakan perpotongan dari baris ke-i dan kolom ke-j diberi nomor (i, j). Ruangan ke-(i, j) memiliki poin P_{i, j}. Setiap ruangan juga mungkin saja memiliki sebuah teleport.
+
+Kali ini, Pak Dengklek akan menelusuri labirin ini. Pada detik pertama, Pak Dengklek akan berdiri di ruangan yang berada di baris pertama kolom manapun dan pada detik terakhir, Pak Dengklek harus berdiri di ruangan yang berada di baris ke-R kolom manapun.
+
+Selama satu detik, jika Pak Dengklek sekarang berada di ruangan ke-(i, j) maka Pak Dengklek dapat berpindah ke salah satu ruangan berikut ini, jika ada :
+- Ruangan ke-(i + 1, j - 1)
+- Ruangan ke-(i + 1, j)
+- Ruangan ke-(i + 1, j + 1)
+- Jika terdapat teleport di ruangan ke-(i, j), maka Pak Dengklek juga dapat berpindah ke ruangan manapun yang juga memiliki teleport, termasuk ruangan ke-(i, j). Pak Dengklek hanya dapat melakukan operasi ini tidak lebih dari K kali selama penelusuran labirin. Perhatikan bahwa jika Pak Dengklek memutuskan untuk berpindah ke ruangan yang sama, maka Pak Dengklek akan berada di ruangan yang sama selama dua detik berturut-turut.
+
+Sehingga, pada setiap detik, Pak Dengklek akan berada di sebuah ruangan pada labirin. Pak Dengklek mendefinisikan nilai dari penelusuran sebagai total poin dari seluruh ruangan yang dikunjungi setiap detiknya. Dengan kata lain, jika ruangan-ruangan yang dikunjungi Pak Dengklek pada detik ke-i adalah ruang ke-r_i, maka nilai penelusuran adalah jumlah P_{r_i} untuk setiap 1 ≤ i ≤ L, yang mana detik ke-L adalah detik terakhir.
+
+Bantulah Pak Dengklek untuk mencari nilai penelusuran maksimum yang dapat ia raih.
+
+
+[Tugas]
+
+Anda harus mengimplementasi fungsi getMaximumPoints:
+
+- getMaximumPoints(R, C, K, T, P) - Fungsi ini akan dipanggil grader hanya sekali.
+  - R : Banyaknya baris pada labirin.
+  - C : Banyaknya kolom pada labirin.
+  - K : Banyaknya penggunaan teleport maksimum yang Pak Dengklek bisa gunakan selama penelusuran.
+  - T : Sebuah matriks berukuran R * C. T[i][j] akan bernilai 0 jika tidak terdapat teleport di ruangan ke-(i + 1, j + 1). T[i][j] akan bernilai 1 jika terdapat teleport di ruangan ke-(i + 1, j + 1). 
+  - P : Sebuah matriks berukuran R * C. P[i][j] menyatakan nilai dari P_{i + 1, j + 1}.
+  - Fungsi ini harus mengembalikan sebuah long long yang menyatakan nilai penelusuran maksimum yang dapat Pak Dengklek raih.
+
+
+[Contoh]
+
+Jika diberikan R = 3, C = 3, K = 1, T = {{0, 1, 0}, {0, 0, 0}, {0, 1, 0}}, P = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, maka penelusuran optimal Pak Dengklek adalah sebagai berikut :
+
+1. Memulai penelusuran pada ruangan ke-(1, 3)
+2. Bergerak ke ruangan ke-(2, 3)
+3. Bergerak ke ruangan ke-(3, 2)
+4. Menggunakan teleport ke ruangan ke-(1, 2)
+5. Bergerak ke ruangan ke-(2, 3)
+6. Bergerak ke ruangan ke-(3, 3)
+
+Sehingga, nilai penelusuran Pak Dengklek adalah 3 + 6 + 8 + 2 + 6 + 9 = 34 dan getMaximumPoints(R, C, K, T, P) harus mengembalikan 34.
+
+
+[Subsoal]
+
+Pada setiap subsoal berlaku
+
+- 1 ≤ R, C ≤ 1.500
+- 0 ≤ K ≤ 10^9
+- -10^6 ≤ P_{i, j} ≤ 10^6 untuk setiap 1 ≤ i ≤ R, 1 ≤ j ≤ C
+
+Subsoal 1
+
+- R, C, K ≤ 30
+
+Subsoal 2
+
+- R, C, K ≤ 250
+
+Subsoal 3
+
+- R, C ≤ 30
+
+Subsoal 4
+
+- K = 0
+
+Subsoal 5
+
+- Tidak ada batasan tambahan
+
+
+[Contoh Grader]
+
+Contoh grader yang diberikan akan membaca masukan dengan format sebagai berikut :
+- Baris pertama berisi tiga buah bilangan bulat R, C, dan K dipisahkan oleh spasi.
+- R baris berikutnya berisi C buah bilangan bulat dipisahkan oleh spasi. Kolom ke-j pada baris ke-i menyatakan nilai T[i - 1][j - 1].
+- R baris berikutnya berisi C buah bilangan bulat dipisahkan oleh spasi. Kolom ke-j pada baris ke-i menyatakan nilai P[i - 1][j - 1].
+
+Contoh grader yang diberikan akan mencetak keluaran dengan format sebagai berikut :
+- Baris pertama berisi sebuah bilangan bulat yang dikembalikan oleh fungsi getMaximumPoints.
+
+
+[Kerangka]
+
+Kerangka soal dapat Anda unduh di sini.

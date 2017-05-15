@@ -1,0 +1,71 @@
+Expanding Squares
+
+
+[Description]
+
+There are N points in a Cartesian plane. The i-th point lies on (X_i, Y_i). No two points occupy the same coordinate. Each of these points is actually a square whose side length is negligible. Initially, you may assume that the side length of each square is zero.
+
+The side length of each square is increasing at a constant rate. The rate of change is equal for all squares. For each square, its side length will increase in a way such that its center point does not move. More formally, assume that there is a square whose lower left corner is (x – S, y – S) and upper right corner is (x + S, y + S). This square has center point (x, y). If its side length increases by D, its lower left corner will be (x – (S + D/2), y – (S + D/2)) and its upper right corner will be (x + (S + D/2), y + (S + D/2)).
+
+Once a square touches another square, its side length will stop increasing. Obviously, there will be a point in time when all the squares stop growing. Your task is to compute the total area covered by these squares at that time. This area is guaranteed to be an integer value. 
+
+
+[Task]
+
+You have to implement getTotalArea function:
+
+- getTotalArea(N, X, Y) - This function will be called once by the grader.
+  - N : The number of points in the plane.
+  - X : A vector with size N. X[i] indicates the value of X_{i + 1}.
+  - Y : A vector with size N. Y[i] indicates the value of Y_{i + 1}.
+  - This function must return a long long indicating the total area covered by the squares at the end of expansion.
+
+
+[Example]
+
+If given N = 3, X = {0, 0, 2}, Y = {0, 2, 0}, then getTotalArea(N, X, Y) must return 12.
+
+
+[Subtasks]
+
+For every subtask
+
+- 2 ≤ N ≤ 20.000
+- 0 ≤ X_i, Y_i ≤ 100.000 for every 1 ≤ i ≤ N
+- X_i ≠ X_j or Y_i ≠ Y_j for every 1 ≤ i < j ≤ N
+
+Subtask 1
+
+- N ≤ 100
+- X_i, Y_i ≤ 100 for every 1 ≤ i ≤ N
+
+Subtask 2
+
+- N ≤ 100
+
+Subtask 3
+
+- N ≤ 4.000
+
+Subtask 4
+
+- N ≤ 10.000
+
+Subtask 5
+
+- No additional constraint
+
+
+[Sample Grader]
+
+The provided sample grader will read the input with the following format :
+- The first row consists of an integer N.
+- The next N lines consist of two integers separated by space. The i-th line consists of X[i - 1] and Y[i - 1] respectively.
+
+The provided sample grader will print the output with the following format :
+- The first line consists of an integer returned by getTotalArea function.
+
+
+[Skeleton]
+
+You can download the skeleton for this problem here.

@@ -1,0 +1,90 @@
+Teleport
+
+
+[Description]
+
+This time, Mr Dengklek is in a labyrinth consisting of R rows and C columns. The rows are numbered from 1 (the topmost row) to R (the bottommost row), and the columns are numbered from 1 (the leftmost column) to C (the rightmost column). There is a room at every intersection of row and column. The room at the intersection of the i-th row and the j-th column is numbered (i, j). The (i, j)-th room has P_{i, j} points. Each room may also have a teleport.
+
+This time, Mr. Dengklek will traverse the labyrinth. At the first second, Mr. Dengklek will stand in the room at the first row at any column and at the last second, Mr. Dengklek must stand in the room at the R-th row at any column.
+
+For one second, if Mr. Dengklek currently stand in (i, j)-th room then Mr. Dengklek can move to either one of these existing rooms :
+- The (i + 1, j - 1)-th room
+- The (i + 1, j)-th room
+- The (i + 1, j + 1)-th room
+- If there exists a teleport in (i, j)-th room, then Mr. Dengklek can also move to any room which also has a teleport, including (i, j)-th room. Mr. Dengklek can only do this operation at most K times during the labyrinth traversal. Notice that if Mr. Dengklek decides to move to the same room, then Mr. Dengklek will be in the same room for two consecutive seconds.
+
+Hence, at every second, Mr. Dengklek will be in a room in the labyrinth. Mr. Dengklek defines the score of a traversal as the sum of the points of all visited rooms at every second. In other words, if Mr. Dengklek visits the r_i-th room at the i-th second, then the traversal score will be the sum of  P_{r_i} for every 1 ≤ i ≤ L, where the L-th second is the last second.
+
+Help Mr. Dengklek to find the maximum traversal score he can get.
+
+
+[Task]
+
+You have to implement getMaximumPoints function:
+
+- getMaximumPoints(R, C, K, T, P) - This function will be called once by the grader.
+  - R : The number of rows in the labyrinth.
+  - C : The number of columns in the labyrinth.
+  - K : The maximum number of teleport usage Mr. Dengklek can use during the traversal.
+  - T : An R * C matrix. T[i][j] will be 0 if there is no teleport at the (i + 1, j + 1)-th room. T[i][j] will be 1 if there is a teleport at the (i + 1, j + 1)-th room.
+  - P : An R * C matrix. P[i][j] indicates the value of P_{i + 1, j + 1}.
+  - This function must return a long long indiciating the maximum traversal score Mr. Dengklek can get.
+
+
+[Example]
+
+If given R = 3, C = 3, K = 1, T = {{0, 1, 0}, {0, 0, 0}, {0, 1, 0}}, P = {{1, 2, 3}, {4, 5, 6}, {7, 8, 9}}, then Mr. Dengklek's optimal traversal is :
+
+1. Starts the traversal in the (1, 3)-th room
+2. Moves to the (2, 3)-th room
+3. Moves to the (3, 2)-th room
+4. Use the teleport to the (1, 2)-th room
+5. Moves to the (2, 3)-th room
+6. Moves to the (3, 3)-th room
+
+Therefore, Mr. Dengklek's traversal score is 3 + 6 + 8 + 2 + 6 + 9 = 34 and getMaximumPoints(R, C, K, T, P) must return 34.
+
+
+[Subtasks]
+
+For every subtask
+
+- 1 ≤ R, C ≤ 1.500
+- 0 ≤ K ≤ 10^9
+- -10^6 ≤ P_{i, j} ≤ 10^6 for every 1 ≤ i ≤ R, 1 ≤ j ≤ C
+
+Subtask 1
+
+- R, C, K ≤ 30
+
+Subtask 2
+
+- R, C, K ≤ 250
+
+Subtask 3
+
+- R, C ≤ 30
+
+Subtask 4
+
+- K = 0
+
+Subtask 5
+
+- No additional constraint
+
+
+[Sample Grader]
+
+The provided sample grader will read the input with the following format :
+- The first row consists of three integers R, C, and K separated by space.
+- The next R lines consist of C integers separated by space. The j-th column on the i-th row indicates the value of T[i - 1][j - 1].
+- The next R lines consist of C integers separated by space. The j-th column on the i-th row indicates the value of P[i - 1][j - 1].
+
+The provided sample grader will print the output with the following format :
+- The first line consists of an integer returned by getMaximumPoints function.
+
+
+[Skeleton]
+
+You can download the skeleton for this problem here.
